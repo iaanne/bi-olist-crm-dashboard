@@ -68,9 +68,11 @@ Tombol **Atur ulang filter** mengembalikan semua pilihan ke awal.
 
 ```
 app.py                 Titik masuk, navigasi, dan filter sidebar
-requirements.txt       Dependensi Python
+requirements.txt       Dependensi dashboard
+requirements-dev.txt   Dependensi tambahan untuk membangun laporan dan notebook
 rfm_analisis.ipynb     Notebook analisis RFM, output sudah tertanam
-laporan/               Laporan PDF tujuh halaman
+laporan/               Laporan PDF tujuh halaman dan skrip pembangunnya
+notebook/              Skrip pembangun notebook RFM
 archive/               Sembilan berkas CSV sumber Olist
 src/
   config.py            Palet warna, pemetaan segmen, negara bagian, bobot skor
@@ -82,6 +84,19 @@ src/
   ui.py                CSS, komponen KPI, tabel HTML, filter sidebar
 views/                 Tujuh halaman dashboard
 ```
+
+## Membangun ulang laporan dan notebook
+
+Kedua berkas hasil sudah tersedia di repo. Kalau perlu dibuat ulang:
+
+```bash
+pip install -r requirements-dev.txt
+python3 laporan/build_laporan.py
+python3 notebook/build_rfm_notebook.py
+```
+
+Dependensi tambahannya sengaja dipisah ke `requirements-dev.txt` agar build Streamlit
+Cloud tetap ringan.
 
 ## Catatan teknis
 

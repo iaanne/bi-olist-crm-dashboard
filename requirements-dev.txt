@@ -1,0 +1,6 @@
+# Dependensi tambahan untuk membangun ulang laporan PDF dan notebook.
+# Dashboard hanya memakai requirements.txt.
+-r requirements.txt
+matplotlib>=3.7
+weasyprint>=60
+nbformat>=5.9
